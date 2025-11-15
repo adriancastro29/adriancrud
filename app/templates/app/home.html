@@ -1,10 +1,11 @@
 {% extends 'app/base.html' %}
 {% load static %}
-
 {% block content %}
-    <h1>Hello World</h1>
-    <img
-    src="{% static 'images/person-hold-mobile-phone-point-blank-screen.jpg' %}"
-    style="width: 300px; height: auto;"
-    >
+<h1>Hello World</h1>
+{% load static %}
+
+<img src="{% static 'images/person-hold-mobile-phone-point-blank-screen.jpg' %}"
+     alt="idea"
+     width="200" height="200">
+
 {% endblock content %}

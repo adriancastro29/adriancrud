@@ -1,0 +1,12 @@
+{% extends 'app/base.html' %}
+{% block content %}
+
+<h1>{% if object %}Edit{% else %}New{% endif %} Post</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="{% if object %}Update{% else %}Save{% endif %}" class="btn">
+</form>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- New Blog Post Button -->
+<a href="#" class="btn">+ New Blog Post</a>
+
+<!-- Posts list -->
+{% for post in post_list %}
+<div class="post-entry card">
+    <h2><a href="#">{{ post.title }}</a></h2>
+    <p>{{ post.body }}</p>
+</div>
+<a href="{% url 'blog_update' object.pk %}">+ Edit Blog</a>
+{% empty %}
+<p>No posts yet.</p>
+{% endfor %}
+
+{% endblock content %}

@@ -1,3 +1,76 @@
-h1 {
-    color: #81d4fa;
+/* GENERAL PAGE STYLING */
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: #fafafa;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* TOP BUTTON */
+.btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #800000; /* maroon */
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background: #660000;
+}
+
+/* NAV RIGHT AREA */
+.nav-right {
+    margin-top: 20px;
+}
+
+/* CARD POST ENTRY */
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.card:hover {
+    border-color: #800000;
+}
+
+/* POST TITLE */
+.post-entry h2 a {
+    color: #800000;
+    text-decoration: none;
+}
+
+.post-entry h2 a:hover {
+    text-decoration: underline;
+}
+
+/* EDIT & DELETE BUTTONS */
+.btn-edit {
+    background: #AA3939;
+    margin-right: 5px;
+}
+
+.btn-edit:hover {
+    background: #8A2E2E;
+}
+
+.btn-delete {
+    background: #550000;
+}
+
+.btn-delete:hover {
+    background: #3B0000;
+}
+
+/* EMPTY MESSAGE */
+p {
+    margin: 10px 0;
 }
