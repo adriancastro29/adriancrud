@@ -1,0 +1,18 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<h2>Order Medicine</h2>
+
+<div class="card">
+  <h3>{{ medicine.name }}</h3>
+  <p>Price: ₱{{ medicine.price }}</p>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" class="btn">Confirm Order</button>
+    <a href="{% url 'medicine_list' %}" class="btn btn-delete">Cancel</a>
+  </form>
+</div>
+{% endblock %}

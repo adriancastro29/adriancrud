@@ -214,3 +214,17 @@ p {
         margin-left: 10px;
     }
 }
+.nav-link-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    margin-left: 25px;
+    padding: 0;
+}
+
+.nav-link-btn:hover {
+    color: #800000;
+}

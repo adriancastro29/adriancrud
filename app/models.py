@@ -61,50 +61,24 @@ class Inventory(models.Model):
 # -----------------------------
 # Order
 # -----------------------------
+from django.db import models
+from django.contrib.auth.models import User
+from .models import Pharmacy  # if Pharmacy is in the same app
+
+
 class Order(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    pharmacy = models.ForeignKey(Pharmacy, on_delete=models.CASCADE)
 
-    STATUS_PENDING = 'pending'
-    STATUS_CONFIRMED = 'confirmed'
-    STATUS_DELIVERED = 'delivered'
-    STATUS_CANCELLED = 'cancelled'
+    buyer_name = models.CharField(max_length=100)
+    buyer_contact = models.CharField(max_length=20)
+    buyer_address = models.TextField()
 
-    STATUS_CHOICES = [
-        (STATUS_PENDING, 'Pending'),
-        (STATUS_CONFIRMED, 'Confirmed'),
-        (STATUS_DELIVERED, 'Delivered'),
-        (STATUS_CANCELLED, 'Cancelled'),
-    ]
-
-    user = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,
-        related_name='orders'
-    )
-    pharmacy = models.ForeignKey(
-        Pharmacy,
-        on_delete=models.CASCADE,
-        related_name='orders'
-    )
     order_date = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(
-        max_length=20,
-        choices=STATUS_CHOICES,
-        default=STATUS_PENDING
-    )
+    status = models.CharField(max_length=20, default='pending')
 
-    total_amount = models.DecimalField(
-        max_digits=10,
-        decimal_places=2,
-        default=0
-    )
+    total_amount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
-    def __str__(self):
-        return f"Order #{self.id}"
-
-
-# -----------------------------
-# Order Item
-# -----------------------------
 class OrderItem(models.Model):
     order = models.ForeignKey(
         Order,

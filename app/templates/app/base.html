@@ -12,14 +12,22 @@
 
 <!-- ✅ ORDER / SYSTEM MESSAGES -->
 {% if messages %}
-  <div class="messages">
+  <div style="max-width: 1100px; margin: 10px auto;">
     {% for message in messages %}
-      <div class="alert {{ message.tags }}">
+      <div style="
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        border-radius: 6px;
+        background-color: #ffe6e6;
+        color: #800000;
+        border: 1px solid #800000;
+      ">
         {{ message }}
       </div>
     {% endfor %}
   </div>
 {% endif %}
+
 
 {% block content %}
 {% endblock content %}

@@ -3,7 +3,18 @@
 {% block content %}
 <h1>Available Medicines</h1>
 
-<a href="{% url 'medicine_add' %}" class="btn">+ Add Medicine</a>
+<!-- 🔍 SEARCH BAR (ADDED HERE) -->
+<form method="get" class="medicine-search" autocomplete="off">
+
+    <input
+    type="text"
+    name="q"
+    placeholder="Search medicine name, brand, or generic..."
+    value="{{ request.GET.q }}"
+    autocomplete="off"
+    >
+    <button type="submit" class="btn">Search</button>
+</form>
 
 {% for medicine in medicines %}
   <div class="card">
@@ -16,9 +27,9 @@
     </p>
 
     <a href="{% url 'medicine_detail' medicine.pk %}" class="btn">View</a>
-    <a href="{% url 'medicine_update' medicine.pk %}" class="btn">Edit</a>
-    <a href="{% url 'medicine_order' medicine.pk %}" class="btn btn-order">Order</a>
+    <a href="{% url 'medicine_order' medicine.pk %}" class="btn">Order</a>
   </div>
+
 {% empty %}
   <p>No medicines available.</p>
 {% endfor %}
