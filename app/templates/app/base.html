@@ -3,15 +3,25 @@
 <head>
     {% load static %}
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>GabayGamot</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
 
 {% include 'app/navbar.html' %}
 
+<!-- ✅ ORDER / SYSTEM MESSAGES -->
+{% if messages %}
+  <div class="messages">
+    {% for message in messages %}
+      <div class="alert {{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
 {% block content %}
-<!-- pages -->
 {% endblock content %}
 
 <script src="{% static 'js/base.js' %}"></script>

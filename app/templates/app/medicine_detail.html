@@ -1,0 +1,16 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<h1>{{ medicine.name }}</h1>
+
+<p>
+    <strong>Brand:</strong> {{ medicine.brand_name }} <br>
+    <strong>Generic:</strong> {{ medicine.generic_name }} <br>
+    <strong>Price:</strong> ₱{{ medicine.price }}
+</p>
+
+<a href="{% url 'medicine_update' medicine.pk %}" class="btn">Edit</a>
+<a href="{% url 'medicine_order' medicine.pk %}" class="btn btn-order">Order</a>
+<a href="{% url 'medicine_list' %}" class="btn">Back</a>
+
+{% endblock %}

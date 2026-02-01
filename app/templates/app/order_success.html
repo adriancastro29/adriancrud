@@ -1,0 +1,9 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<h1>Order Confirmed</h1>
+
+<p>Your medicine order has been successfully placed.</p>
+
+<a href="{% url 'medicine_list' %}" class="btn">Back to Medicines</a>
+{% endblock %}

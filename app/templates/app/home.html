@@ -1,11 +1,37 @@
 {% extends 'app/base.html' %}
 {% load static %}
+
 {% block content %}
-<h1>Hello World</h1>
-{% load static %}
+<section class="hero">
+    <div class="hero-text">
+        <h1>
+            Gabay<span>Gamot</span>
+        </h1>
 
-<img src="{% static 'images/person-hold-mobile-phone-point-blank-screen.jpg' %}"
-     alt="idea"
-     width="200" height="200">
+        <h2>
+            Your Guide to Affordable Medicines
+        </h2>
 
-{% endblock content %}
+        <p>
+            GabayGamot helps users find available medicines,
+            compare generic and branded options, and order
+            safely from registered pharmacies.
+        </p>
+
+        <div class="hero-actions">
+            <a href="{% url 'medicine_list' %}" class="btn">
+                Browse Medicines
+            </a>
+            <a href="{% url 'about' %}" class="btn btn-edit">
+                Learn More
+            </a>
+        </div>
+    </div>
+
+    <div class="hero-visual">
+        <!-- optional image or empty placeholder -->
+        <img src="{% static 'images/person-hold-mobile-phone-point-blank-screen.jpg' %}"
+             alt="GabayGamot Preview">
+    </div>
+</section>
+{% endblock %}
